@@ -9,10 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="shortcut icon" type="image/x-icon" href="../assets/img/logo.png" />
     <title>bantam</title>
 
-<?php echo link_tag('assets/css/bootstrap.min.css'); ?>
-<?php echo link_tag('assets/css/font-awesome.min.css'); ?>
-<?php echo link_tag('assets/css/style.css'); ?>
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/style.css">
 <body>
     <div class="main-wrapper  account-wrapper">
         <div class="account-page">
@@ -26,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                    ?>
                       <form role="form" method="post" class="form-signin" action="<?php echo base_url('user/register_user'); ?>">
 						<div class="account-logo">
-                            <a href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+                            <a href="index.html"><img src="<?php echo base_url(); ?>./assets/img/logo.png" alt=""></a>
                         </div>
                           <fieldset>
                         <div class="form-group">
@@ -63,9 +62,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>
 
-<?php echo link_tag('assets/js/jquery-3.2.1.min.js'); ?>
-<?php echo link_tag('assets/js/popper.min.js'); ?>
-<?php echo link_tag('assets/js/bootstrap.min.js'); ?>
-<?php echo link_tag('assets/js/app.js'); ?>
+    <script src="<?php echo base_url(); ?>./assets/js/jquery-3.2.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>./assets/js/popper.min.js"></script>
+    <script src="<?php echo base_url(); ?>./assets/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>./assets/js/app.js"></script>
 </body>
 </html>

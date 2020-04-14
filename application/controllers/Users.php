@@ -1,10 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Register extends CI_Controller {
+class Users extends CI_Controller {
+   
   public function __construct() {
       parent::__construct();
-      $this->load->model('User_model', 'user');
+      $this->load->model('Login_model', 'user');
   }
   // Dashboard
   public function index()
@@ -12,42 +13,39 @@ class Register extends CI_Controller {
     if ($this->session->userdata('is_authenticated') == FALSE) {
             redirect('users/login'); // the user is not logged in, redirect them!
         } else {
-      $data['title'] = 'Dashboard - Tech Arise';
+      $data['title'] = 'Dashboard - Bantam';
           $data['metaDescription'] = 'Dashboard';
           $data['metaKeywords'] = 'Dashboard';
           $this->user->setUserID($this->session->userdata('user_id'));
           $data['userInfo'] = $this->user->getUserInfo();
-          $this->load->view('users/dashboard', $data);
+          $this->load->view('Users/dashboard', $data);
       }
   }
         // Login
   public function login()
   {
-  $data['title'] = 'Login - Tech Arise';
-        $data['metaDescription'] = 'Login';
-        $data['metaKeywords'] = 'Login';
-        $this->load->view('users/login', $data);
+        $this->load->view('login');
   }
   // Login Action 
   function doLogin() {
     // Check form  validation
     $this->load->library('form_validation');
- 
+
     $this->form_validation->set_rules('email', 'Your Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('password', 'Password', 'trim|required');
- 
+
     if($this->form_validation->run() == FALSE) {
       //Field validation failed.  User redirected to login page
-      $this->load->view('users/login');
+      $this->load->view('login');
     } else {  
       $sessArray = array();
       //Field validation succeeded.  Validate against database
       $email = $this->input->post('email');
       $password = $this->input->post('password');
- 
+
       $this->user->setEmail($email);
       $this->user->setPassword(MD5($password));
- 
+
       //query the database
       $result = $this->user->login();
       

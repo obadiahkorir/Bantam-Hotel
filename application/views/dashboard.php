@@ -138,7 +138,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <ul>
                         <li class="menu-title">Main</li>
                         <li class="active" >
-                            <a class="active" href="index.html"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+                            <a class="active" href="<?php echo site_url('Dashboard/index'); ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
 						<li class="submenu">
 							<a href="#"><i class="fa fa-suitcase" aria-hidden="true"></i><span> Booking</span> <span class="menu-arrow"></span></a>
@@ -151,59 +151,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							<a href="#"><i class="fa fa-users" aria-hidden="true"></i> <span> Customers </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
 								<li><a href="<?php echo site_url('Dashboard/allCustomers'); ?>">All customers</a></li>
-								<li><a href="add-customer.html">Add Customer</a></li>
+								<li><a href="<?php echo site_url('Dashboard/addCustomers'); ?>">Add Customer</a></li>
 							</ul>
 						</li>
 						<li class="submenu">
 							<a href="#"><i class="fa fa-key" aria-hidden="true"></i> <span> Rooms </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a href="all-rooms.html">All Rooms</a></li>
-								<li><a href="edit-room.html">Edit Room</a></li>
-								<li><a href="add-room.html">Add Room</a></li>
+								<li><a href="<?php echo site_url('Dashboard/allRooms'); ?>">All Rooms</a></li>
+								<li><a href="<?php echo site_url('Dashboard/addRooms'); ?>">Add Room</a></li>
 							</ul>
 						</li>
                         <li class="submenu">
 							<a href="#"><i class="fa fa-user"></i> <span> Staff </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a href="all-staff.html">All Staff</a></li>
-								<li><a href="edit-staff.html">Edit Staff</a></li>
-								<li><a href="add-staff.html">Add staff</a></li>
-							</ul>
-						</li>
-                        <li>
-                            <a href="pricing.html"><i class="fa fa-money" aria-hidden="true"></i> <span>Pricing</span></a>
-                        </li>
-						<li class="submenu">
-							<a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i> <span> Apps </span> <span class="menu-arrow"></span></a>
-							<ul style="display: none;">
-								<li>
-									<a href="chat.html"><i class="fa fa-comments"></i> <span>Chat</span> <span class="badge badge-pill text-white bg-primary float-right">5</span></a>
-								</li>
-								 <li class="submenu">
-								<a href="#"><i class="fa fa-video-camera camera"></i> <span> Calls</span> <span class="menu-arrow"></span></a>
-								<ul style="display: none;">
-                                <li><a href="voice-call.html">Voice Call</a></li>
-                                <li><a href="video-call.html">Video Call</a></li>
-                                <li><a href="incoming-call.html">Incoming Call</a></li>
-                            </ul>
-                        </li>
-						<li class="submenu">
-                            <a href="#"><i class="fa fa-envelope"></i> <span> Email</span> <span class="menu-arrow"></span></a>
-                            <ul style="display: none;">
-                                <li><a href="compose.html">Compose Mail</a></li>
-                                <li><a href="inbox.html">Inbox</a></li>
-                                <li><a href="mail-view.html">Mail View</a></li>
-                            </ul>
-							</li>
+								<li><a href="<?php echo site_url('Dashboard/allStaff'); ?>">All Staff</a></li>
+								<li><a href="<?php echo site_url('Dashboard/addStaff'); ?>">Add staff</a></li>
 							</ul>
 						</li>
 						<li class="submenu">
 							<a href="#"><i class="fa fa-user"></i> <span> Employees </span> <span class="menu-arrow"></span></a>
 							<ul style="display: none;">
-								<li><a href="employees.html">Employees List</a></li>
-								<li><a href="leaves.html">Leaves</a></li>
-								<li><a href="holidays.html">Holidays</a></li>
-								<li><a href="attendance.html">Attendance</a></li>
+								<li><a href="<?php echo site_url('Dashboard/allEmployees'); ?>">Employees List</a></li>
+								<li><a href="<?php echo site_url('Dashboard/allLeaves'); ?>">Leaves</a></li>
 							</ul>
 						</li>
 						<li class="submenu">
@@ -213,24 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								<li><a href="payments.html">Payments</a></li>
 								<li><a href="expenses.html">Expenses</a></li>
 								<li><a href="taxes.html">Taxes</a></li>
-								<li><a href="provident-fund.html">Provident Fund</a></li>
 							</ul>
-						</li>
-						<li class="submenu">
-							<a href="#"><i class="fa fa-book"></i> <span> Payroll </span> <span class="menu-arrow"></span></a>
-							<ul style="display: none;">
-								<li><a href="salary.html"> Employee Salary </a></li>
-								<li><a href="salary-view.html"> Payslip </a></li>
-							</ul>
-						</li>
-                        <li>
-                            <a href="calendar.html"><i class="fa fa-calendar"></i> <span>Calendar</span></a>
-                        </li>
-						<li>
-							<a href="assets.html"><i class="fa fa-cube"></i> <span>Assets</span></a>
-						</li>
-						<li>
-							<a href="activities.html"><i class="fa fa-bell-o"></i> <span>Activities</span></a>
 						</li>
 						<li class="submenu">
 							<a href="#"><i class="fa fa-flag-o"></i> <span> Reports </span> <span class="menu-arrow"></span></a>

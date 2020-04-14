@@ -4,32 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <title>Bantam</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap.min.css">
+    <title>Hotel - Bootstrap 4 Admin Template</title>
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/style.css">
 </head>
 
 <body>
     <div class="main-wrapper">
         <div class="header">
-            <div class="header-left">
-                <a href="index.html" class="logo">
-                    <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Hotel</span>
-                </a>
-            </div>
-            <div class="menubar">
-                <a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
-            </div>
-            
-            <div class="searchbar">
-                <form class="form-inline my-1 w-25 float-left">
-                    <input class="form-control mr-sm-2 search-input" type="search" placeholder="Search..." >
-                </form>
-            </div>      
+			<div class="header-left">
+				<a href="index.html" class="logo">
+					<img src="<?php echo base_url(); ?>./assets/img/logo.png" width="35" height="35" alt=""> <span>Hotel</span>
+				</a>
+			</div>
+			<div class="menubar">
+				<a id="toggle_btn" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+			</div>
+			
+			<div class="searchbar">
+				<form class="form-inline my-1 w-25 float-left">
+					<input class="form-control mr-sm-2 search-input" type="search" placeholder="Search..." >
+				</form>
+			</div>		
             <a id="mobile_btn" class="mobile_btn float-left" href="#sidebar"><i class="fa fa-bars"></i></a>
             <ul class="nav user-menu float-right">
                 <li class="nav-item dropdown d-none d-sm-block">
@@ -43,57 +42,57 @@
                                 <li class="notification-message">
                                     <a href="activities.html">
                                         <div class="media">
-                                            <span class="avatar">
-                                                <img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
-                                            </span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-                                            </div>
+											<span class="avatar">
+												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+											</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
+												<p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+											</div>
                                         </div>
                                     </a>
                                 </li>
                                 <li class="notification-message">
                                     <a href="activities.html">
                                         <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> check-in   <span class="noti-title"> with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-                                            </div>
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Tarah Shropshire</span> check-in   <span class="noti-title"> with payment gateway</span></p>
+												<p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+											</div>
                                         </div>
                                     </a>
                                 </li>
                                 <li class="notification-message">
                                     <a href="activities.html">
                                         <div class="media">
-                                            <span class="avatar">L</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span> check-out <span class="noti-title">Today</span> </p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-                                            </div>
+											<span class="avatar">L</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Misty Tison</span> check-out <span class="noti-title">Today</span> </p>
+												<p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+											</div>
                                         </div>
                                     </a>
                                 </li>
                                 <li class="notification-message">
                                     <a href="activities.html">
                                         <div class="media">
-                                            <span class="avatar">G</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span> Extended another  <span class="noti-title">two days</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-                                            </div>
+											<span class="avatar">G</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Rolland Webber</span> Extended another  <span class="noti-title">two days</span></p>
+												<p class="noti-time"><span class="notification-time">12 mins ago</span></p>
+											</div>
                                         </div>
                                     </a>
                                 </li>
                                 <li class="notification-message">
                                     <a href="activities.html">
                                         <div class="media">
-                                            <span class="avatar">V</span>
-                                            <div class="media-body">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new booking <span class="noti-title">for couple of days</span></p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span></p>
-                                            </div>
+											<span class="avatar">V</span>
+											<div class="media-body">
+												<p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new booking <span class="noti-title">for couple of days</span></p>
+												<p class="noti-time"><span class="notification-time">2 days ago</span></p>
+											</div>
                                         </div>
                                     </a>
                                 </li>
@@ -110,15 +109,15 @@
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
-                            <span class="status online"></span></span>
+							<span class="status online"></span></span>
                         <span>Admin</span>
                     </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.html">My Profile</a>
-                        <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-                        <a class="dropdown-item" href="settings.html">Settings</a>
-                        <a class="dropdown-item" href="login.html">Logout</a>
-                    </div>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="profile.html">My Profile</a>
+						<a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
+						<a class="dropdown-item" href="settings.html">Settings</a>
+						<a class="dropdown-item" href="login.html">Logout</a>
+					</div>
                 </li>
             </ul>
             <div class="dropdown mobile-user-menu float-right">
@@ -201,85 +200,108 @@
         <div class="page-wrapper">
             <div class="content">
                 <div class="row">
-                    <div class="col-sm-4 col-3">
-                        <h4 class="page-title">Customers</h4>
-                    </div>
-                    <div class="col-sm-8 col-9 text-right m-b-20">
-                        <a href="add-customer.html" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Customer</a>
+                    <div class="col-lg-8 offset-lg-2">
+                        <h4 class="page-title">Add Staff</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="table-responsive">
-                            <table class="table table-striped custom-table">
-                                <thead>
-                                    <tr>
-                                        <th style="width:10%;">Booking ID</th>
-                                        <th style="width:20%;">Name</th>
-                                        <th style="width:10%;">Room type</th>
-                                        <th>Total Numbers</th>
-                                        <th style="width:20%;">Date</th>
-                                        <th>Time</th>
-                                        <th style="width:20%;">Arrive</th>
-                                        <th style="width:20%;">Depart</th>
-                                        <th style="width:20%;">Email</th>
-                                        <th>Number</th>
-                                        <th>Status</th>
-                                        <th class="text-right">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>BKG-0001</td>
-                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise</td>
-                                        <td>Single</td>
-                                        <td>1</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>10:00am</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>3nd Feb 2019</td>
-                                        <td>denisestevens@example.com </td>
-                                        <td>987654321 </td>
-                                        <td><span class="custom-badge status-red">Inactive</span></td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-customer.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>BKG-0001</td>
-                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise</td>
-                                        <td>Single</td>
-                                        <td>1</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>10:00am</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>3nd Feb 2019</td>
-                                        <td>denisestevens@example.com </td>
-                                        <td>987654321 </td>
-                                        <td><span class="custom-badge status-green">active</span></td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-customer.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="col-lg-8 offset-lg-2">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>First Name <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Username <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Email <span class="text-danger">*</span></label>
+                                        <input class="form-control" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input class="form-control" type="password">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Confirm Password</label>
+                                        <input class="form-control" type="password">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Staff ID <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Joining Date <span class="text-danger">*</span></label>
+                                        <div class="cal-icon">
+                                            <input class="form-control datetimepicker" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Phone </label>
+                                        <input class="form-control" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label>Role</label>
+                                        <select class="select">
+                                            <option>Admin</option>
+                                            <option>Manager</option>
+                                            <option>Staff</option>
+                                            <option>Room cleaners</option>
+                                            <option>servants</option>
+                                            <option>Accountant</option>
+                                            <option>Receptionist</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="display-block">Status</label>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="status" id="employee_active" value="option1" checked>
+									<label class="form-check-label" for="employee_active">
+									Active
+									</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="status" id="employee_inactive" value="option2">
+									<label class="form-check-label" for="employee_inactive">
+									Inactive
+									</label>
+								</div>
+                            </div>
+                            <div class="m-t-20 text-center">
+                                <button class="btn btn-primary submit-btn">Create Staff</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="notification-box">
+			<div class="notification-box">
                 <div class="msg-sidebar notifications msg-noti">
                     <div class="topnav-dropdown-header">
                         <span>Messages</span>
@@ -489,30 +511,15 @@
                 </div>
             </div>
         </div>
-        <div id="delete_appointment" class="modal fade delete-modal" role="dialog">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body text-center">
-                            <img src="assets/img/sent.png" alt="" width="50" height="46">
-                            <h3>Are you sure want to delete this Appointment?</h3>
-                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
     </div>
     <div class="sidebar-overlay" data-reff=""></div>
     <script src="<?php echo base_url(); ?>./assets/js/jquery-3.2.1.min.js"></script>
-    <script src="<?php echo base_url(); ?>./assets/js/popper.min.js"></script>
+	<script src="<?php echo base_url(); ?>./assets/js/popper.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/bootstrap.min.js"></script>
-    <script src="<?php echo base_url(); ?>./assets/js/jquery.dataTables.min.js"></script>
-    <script src="<?php echo base_url(); ?>./assets/js/dataTables.bootstrap4.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/jquery.slimscroll.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/select2.min.js"></script>
-    <script src="<?php echo base_url(); ?>./assets/js/moment.min.js"></script>
-    <script src="<?php echo base_url(); ?>./assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/app.js"></script>
+	<script src="<?php echo base_url(); ?>./assets/js/moment.min.js"></script>
+	<script src="<?php echo base_url(); ?>./assets/js/bootstrap-datetimepicker.min.js"></script>
 </body>
 </html>

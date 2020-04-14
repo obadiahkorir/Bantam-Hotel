@@ -2,98 +2,80 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
-
-	public function __construct(){
-        parent::__construct();
-  		$this->load->helper('url');
-  	 	$this->load->model('user_model');
-        $this->load->library('session');
-}
-
+ 
+  public function __construct() {
+      parent::__construct();
+      $this->load->model('Login_Model', 'user');
+  }
+  // Dashboard
   public function index()
-	{
-	$this->load->view("login");
-	}
- public function register_view()
-	{
-	$this->load->view("register.php");
-	}
- public function register_user(){
-
-      $user=array(
-      'user_name'=>$this->input->post('user_name'),
-      'user_email'=>$this->input->post('user_email'),
-      'user_password'=>md5($this->input->post('user_password')),
-      'user_age'=>$this->input->post('user_age'),
-      'user_mobile'=>$this->input->post('user_mobile')
-        );
-        print_r($user);
-
-   $email_check=$this->user_model->email_check($user['user_email']);
-
-	if($email_check){
-	  $this->user_model->register_user($user);
-	  $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
-	  redirect('Dashboard');
-
-	}
-	else{
-
-  $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-  redirect('Login');
-
-
+  {
+    if ($this->session->userdata('is_authenticated') == FALSE) {
+            redirect('Login/login'); // the user is not logged in, redirect them!
+        } else {
+          $data['title'] = 'Dashboard - Bantam Hotel';
+          $data['metaDescription'] = 'Dashboard';
+          $data['metaKeywords'] = 'Dashboard';
+          $this->user->setUserID($this->session->userdata('user_id'));
+          $data['userInfo'] = $this->user->getUserInfo();
+          $this->load->view('dashboard', $data);
+      }
+  }
+    // Login
+  public function login()
+  {
+  $data['title'] = 'Login -Bantam Login';
+        $data['metaDescription'] = 'Login';
+        $data['metaKeywords'] = 'Login';
+        $this->load->view('Login/login', $data);
+  }
+  // Login Action 
+  function doLogin() {
+    // Check form  validation
+    $this->load->library('form_validation');
+    $this->form_validation->set_rules('email', 'Your Email', 'trim|required|valid_email');
+    $this->form_validation->set_rules('password', 'Password', 'trim|required');
+ 
+    if($this->form_validation->run() == FALSE) {
+      //Field validation failed.  User redirected to login page
+      $this->load->view('Login/login');
+    } else {  
+      $sessArray = array();
+      //Field validation succeeded.  Validate against database
+      $email = $this->input->post('email');
+      $password = $this->input->post('password');
+      $this->user->setEmail($email);
+      $this->user->setPassword($password);
+ 
+      //query the database
+      $result = $this->user->login();
+      
+      if($result) {
+        foreach($result as $row) {
+          $sessArray = array(
+            'user_id' => $row->user_id,
+            'name' => $row->name,
+            'email' => $row->email,
+            'is_authenticated' => TRUE,
+          );
+        $this->session->set_userdata($sessArray);
+        }
+        redirect('Dashboard/index');
+      } else {
+        redirect('Login/login?msg=1');
+      } 
+    }
+  }
+  // Logout
+  public function logout() {
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('name');
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('is_authenticated');
+        $this->session->sess_destroy();
+        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate, no-transform, max-age=0, post-check=0, pre-check=0");
+        $this->output->set_header("Pragma: no-cache");
+        redirect('login');
+    }
 }
-
-}
-
-public function login_view(){
-
-$this->load->view("login.php");
-
-}
-
-function login_user(){ 
-  $user_login=array(
-
-  'user_email'=>$this->input->post('user_email'),
-  'user_password'=>md5($this->input->post('user_password'))
-
-    ); 
-//$user_login['user_email'],$user_login['user_password']
-    $data['users']=$this->user_model->login_user();
-    //  if($data)
-      //{
-		  
-        $this->session->set_userdata('user_id',$data['users'][0]['user_id']);
-        $this->session->set_userdata('user_email',$data['users'][0]['user_email']);
-        $this->session->set_userdata('user_name',$data['users'][0]['user_name']);
-        $this->session->set_userdata('user_age',$data['users'][0]['user_age']);
-        $this->session->set_userdata('user_mobile',$data['users'][0]['user_mobile']);
-		echo $this->session->set_userdata('user_id'); 
-        $this->load->view('user_profile.php',$data);
-
-    //  }
-    //  else{
-     //   $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-     //   $this->load->view("login.php");
-
-     // }
-
-
-}
-
-function user_profile(){
-
-$this->load->view('user_profile.php');
-
-}
-public function user_logout(){
-
-  $this->session->sess_destroy();
-  redirect('user/login_view', 'refresh');
-}
-
-}
-
 ?>
