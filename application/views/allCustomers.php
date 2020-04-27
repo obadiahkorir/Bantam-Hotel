@@ -6,6 +6,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
     <title>Bantam</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/bootstrap.min.css">
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>./assets/css/select2.min.css">
@@ -109,9 +110,9 @@
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+                        <span class="user-img"><img class="rounded-circle" src="<?php echo base_url(); ?>./assets/img/user.jpg" width="40" alt="Admin">
                             <span class="status online"></span></span>
-                        <span>Admin</span>
+                        <span><?php echo $this->session->userdata('email');?></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile.html">My Profile</a>
@@ -202,7 +203,7 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-4 col-3">
-                        <h4 class="page-title">Customers</h4>
+                        <h4 class="page-title">All Customers</h4>
                     </div>
                     <div class="col-sm-8 col-9 text-right m-b-20">
                         <a href="add-customer.html" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Customer</a>
@@ -211,68 +212,42 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="table-responsive">
-                            <table class="table table-striped custom-table">
+                        <table class="table table-striped custom-table datatable" id="customers-table">
                                 <thead>
                                     <tr>
-                                        <th style="width:10%;">Booking ID</th>
-                                        <th style="width:20%;">Name</th>
-                                        <th style="width:10%;">Room type</th>
-                                        <th>Total Numbers</th>
-                                        <th style="width:20%;">Date</th>
-                                        <th>Time</th>
-                                        <th style="width:20%;">Arrive</th>
-                                        <th style="width:20%;">Depart</th>
-                                        <th style="width:20%;">Email</th>
-                                        <th>Number</th>
-                                        <th>Status</th>
-                                        <th class="text-right">Action</th>
+                                        <th>SR No.</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email Address</th>
+                                        <th>Phone Number</th>
+                                        <th>Address</th>
+                                        <th>Date of Bith</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>BKG-0001</td>
-                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise</td>
-                                        <td>Single</td>
-                                        <td>1</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>10:00am</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>3nd Feb 2019</td>
-                                        <td>denisestevens@example.com </td>
-                                        <td>987654321 </td>
-                                        <td><span class="custom-badge status-red">Inactive</span></td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-customer.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                         <?php
+                                          $i=1;
+                                          foreach($data as $row)
+                                          {
+                                          echo "<tr>";
+                                          echo "<td>".$i."</td>";
+                                          echo "<td>".$row->first_name."</td>";
+                                          echo "<td>".$row->last_name."</td>";
+                                          echo "<td>".$row->email."</td>";
+                                          echo "<td>".$row->phone_number."</td>";
+                                          echo "<td>".$row->address."</td>";
+                                          echo "<td>".$row->dob."</td>";
+                                          echo "<td><a href=UpdateData?customerid=".$row->customerid."'>Update</a></td>";
+                                          echo "<td><a href=UpdateData?customerid=".$row->customerid."'>Delete</a></td>";
+                                          echo "</tr>";
+                                          $i++;
+                                          }
+                                           ?>
                                     </tr>
-                                    <tr>
-                                        <td>BKG-0001</td>
-                                        <td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise</td>
-                                        <td>Single</td>
-                                        <td>1</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>10:00am</td>
-                                        <td>2nd Feb 2019</td>
-                                        <td>3nd Feb 2019</td>
-                                        <td>denisestevens@example.com </td>
-                                        <td>987654321 </td>
-                                        <td><span class="custom-badge status-green">active</span></td>
-                                        <td class="text-right">
-                                            <div class="dropdown dropdown-action">
-                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="edit-customer.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                   
                                 </tbody>
                             </table>
                         </div>
@@ -514,5 +489,10 @@
     <script src="<?php echo base_url(); ?>./assets/js/moment.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/app.js"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+    $('#customers-table').DataTable();
+});
+</script>
 </body>
 </html>

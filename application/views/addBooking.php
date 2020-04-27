@@ -43,7 +43,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="<?php echo base_url(); ?>./assets/img/user.jpg" class="img-fluid rounded-circle">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
@@ -206,125 +206,32 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                        <form method="post">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-										<label>Booking ID</label>
-										<input class="form-control" type="text" value="BKG-0001" readonly="">
-									</div>
-                                </div>
+                              
                                 <div class="col-md-6">
 									<div class="form-group">
-										<label> Name</label>
-										<input class="form-control" type="text">
+										<label> First Name</label>
+										<input class="form-control" name="first_name" type="text">
 									</div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
+                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Room type</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>Quad</option>
-                                            <option>King</option>
-                                            <option>Suite</option>
-                                            <option>Villa</option>
-                                        </select>
+                                        <label> Last Name </label>
+                                        <input class="form-control" name="last_name" type="text">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Total numbers</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-                                        </select>
+                                        <label> Email Address</label>
+                                        <input class="form-control" name="email" type="text">
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Time</label>
-                                        <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Arrive </label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                     <div class="form-group">
-                                        <label>Depart </label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label> Email</label>
-                                        <input class="form-control" type="email">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label> Phone Number</label>
-                                        <input class="form-control" type="text">
-                                    </div>
-                                </div>
-                            </div>
-							 <div class="custom-file mb-3">
-								  <input type="file" class="custom-file-input" name="filename">
-								  <label class="custom-file-label">Choose file (Photo)</label>
-							</div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="display-block">Booking Status</label>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
-									<label class="form-check-label" for="product_active">
-									Active
-									</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
-									<label class="form-check-label" for="product_inactive">
-									Inactive
-									</label>
-								</div>
+                            
                             </div>
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Create Booking</button>
+                               <input type="submit" class="btn btn-primary submit-btn" name="savebookings" value="Save Bookings"></input>
                             </div>
                         </form>
                     </div>

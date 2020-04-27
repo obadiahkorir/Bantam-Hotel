@@ -16,13 +16,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            
 		 	<div class="account-center">
 				<div class="account-box">
-                    <?php echo form_open('Users/doLogin'); ?>
+                 <?php if(validation_errors()) { ?>
+                      <div class="alert alert-danger">
+                        <?php echo validation_errors(); ?>
+                      </div>
+                    <?php } ?>
+                    <?php if(!empty($this->input->get('msg')) && $this->input->get('msg') == 1) { ?>
+                      <div class="alert alert-danger">
+                        Please Enter Your Valid Information.
+                      </div>
+                    <?php } ?>
+                    <?php echo form_open('users/dologin'); ?>
 						<div class="account-logo">
                          <a href="<?php echo site_url('Login/index'); ?>"><img src="<?php echo base_url(); ?>./assets/img/logo.png" alt=""></a>
                         </div>
                         <div class="form-group">
                             <label>Username or Email</label>
-                            <input type="text" name="Email" id="email"  class="form-control" placeholder="Enter Email Address">
+                         <input type="text" name="email" id="email"  class="form-control" placeholder="Enter Email Address">
                         </div>
                         <div class="form-group">
                             <label>Password</label>

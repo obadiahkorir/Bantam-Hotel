@@ -43,7 +43,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="<?php echo base_url(); ?>./assets/img/user.jpg" class="img-fluid rounded-circle">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>

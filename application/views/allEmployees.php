@@ -43,7 +43,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="<?php echo base_url(); ?>./assets/img/user.jpg" class="img-fluid rounded-circle">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
@@ -110,7 +110,7 @@
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
                         <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
 							<span class="status online"></span></span>
-                        <span>Admin</span>
+                        <span><?php echo $this->session->userdata('email');?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -241,7 +241,7 @@
                 <div class="row">
                     <div class="col-md-12">
 						<div class="table-responsive">
-                            <table class="table table-striped custom-table">
+                            <table class="table table-striped custom-table datatable">
                                 <thead>
                                     <tr>
                                         <th style="min-width:200px;">Name</th>

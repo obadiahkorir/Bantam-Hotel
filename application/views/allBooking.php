@@ -109,9 +109,9 @@
                 </li>
                 <li class="nav-item dropdown has-arrow">
                     <a href="#" class="dropdown-toggle nav-link user-link" data-toggle="dropdown">
-                        <span class="user-img"><img class="rounded-circle" src="assets/img/user.jpg" width="40" alt="Admin">
+                        <span class="user-img"><img class="rounded-circle" src="<?php echo base_url(); ?>./assets/img/user.jpg" width="40" alt="Admin">
 							<span class="status online"></span></span>
-                        <span>Admin</span>
+                        <span><?php echo $this->session->userdata('email');?></span>
                     </a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="profile.html">My Profile</a>
@@ -202,81 +202,48 @@
             <div class="content">
                 <div class="row">
                     <div class="col-sm-4 col-3">
-                        <h4 class="page-title">Appointments</h4>
+                        <h4 class="page-title">All Customer Bookings</h4>
                     </div>
                     <div class="col-sm-8 col-9 text-right m-b-20">
-                        <a href="add-booking.html" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Booking</a>
+                        <a href="<?php echo site_url('Bookings/Bookings'); ?>" class="btn btn btn-primary btn-rounded float-right"><i class="fa fa-plus"></i> Add Booking</a>
                     </div>
                 </div>
 				<div class="row">
-					<div class="col-md-12">
-						<div class="table-responsive">
-							<table class="table table-striped custom-table">
-								<thead>
-									<tr>
-										<th style="width:10%;">Booking ID</th>
-										<th style="width:10%;">Name</th>
-										<th>Room type</th>
-										<th>Total Numbers</th>
-										<th style="width:10%;">Date</th>
-										<th>Time</th>
-										<th style="width:10%;">Arrive</th>
-										<th style="width:10%;">Depart</th>
-										<th>Email</th>
-										<th>Number</th>
-										<th>Status</th>
-										<th class="text-right">Action</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>BKG-0001</td>
-										<td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> Denise</td>
-										<td>Single</td>
-										<td>1</td>
-										<td>2nd Feb 2019</td>
-										<td>10:00am</td>
-										<td>2nd Feb 2019</td>
-										<td>3nd Feb 2019</td>
-										<td>denisestevens@example.com </td>
-										<td>987654321 </td>
-										<td><span class="custom-badge status-red">Inactive</span></td>
-										<td class="text-right">
-											<div class="dropdown dropdown-action">
-												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="edit-booking.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>BKG-0001</td>
-										<td><img width="28" height="28" src="assets/img/user.jpg" class="rounded-circle m-r-5" alt=""> John</td>
-										<td>Single</td>
-										<td>1</td>
-										<td>2nd Feb 2019</td>
-										<td>11:00am</td>
-										<td>2nd Feb 2019</td>
-										<td>3nd Feb 2019</td>
-										<td>john@example.com </td>
-										<td>987654321 </td>
-										<td><span class="custom-badge status-green">active</span></td>
-										<td class="text-right">
-											<div class="dropdown dropdown-action">
-												<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-												<div class="dropdown-menu dropdown-menu-right">
-													<a class="dropdown-item" href="edit-booking.html"><i class="fa fa-pencil m-r-5"></i> Edit</a>
-													<a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_appointment"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
-												</div>
-											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-striped custom-table datatable">
+                                    <thead>
+                                        <tr>
+                                           <th>Sr No</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email Address</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        <?php
+                                          $i=1;
+                                          foreach($data as $row)
+                                          {
+                                      echo "<tr>";
+                                      echo "<td>".$i."</td>";
+                                      echo "<td>".$row->first_name."</td>";
+                                      echo "<td>".$row->last_name."</td>";
+                                      echo "<td>".$row->email."</td>";
+                                      echo "<td><a href=UpdateData?id=".$row->bookingsid."'>Update</a></td>";
+                                      echo "<td><a href=UpdateData?id=".$row->bookingsid."'>Delete</a></td>";
+                                      echo "</tr>";
+                                          $i++;
+                                          }
+                                           ?>
+                                            
+                                    </tbody>
+                                </table>
+                            </div>
+                      </div>
                 </div>
             </div>
             <div class="notification-box">

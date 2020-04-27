@@ -43,7 +43,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="<?php echo base_url(); ?>./assets/img/user.jpg" class="img-fluid rounded-circle">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
@@ -206,127 +206,62 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                       <?php echo form_open('Customers'); ?>
+                            <?php if (isset($message)) { ?>
+                            <CENTER><h3 style="color:green;">Customer with the Give Details has been Registered Successfully</h3></CENTER><br>
+                            <?php } ?>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-										<label>Booking ID</label>
-										<input class="form-control" type="text" value="BKG-0001" readonly="">
+										<label>First Name</label>
+                                  <?php echo form_error('first_name'); ?>
+                                 <?php echo form_input(array('id' => 'first_name', 'name' => 'first_name','class'=>'form-control', 'placeholder'=>'Enter First Name')); ?>
 									</div>
                                 </div>
                                 <div class="col-md-6">
 									<div class="form-group">
-										<label> Name</label>
-										<input class="form-control" type="text">
+										<label>Last Name</label>
+                                        <?php echo form_error('last_name'); ?>
+										<?php echo form_input(array('id' => 'last_name', 'name' => 'last_name','class'=>'form-control', 'placeholder'=>'Enter Last Name')); ?>
 									</div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Room type</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>Quad</option>
-                                            <option>King</option>
-                                            <option>Suite</option>
-                                            <option>Villa</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Total numbers</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Date</label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Time</label>
-                                        <div class="time-icon">
-                                            <input type="text" class="form-control" id="datetimepicker3">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Arrive </label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                     <div class="form-group">
-                                        <label>Depart </label>
-                                        <div class="cal-icon">
-                                            <input type="text" class="form-control datetimepicker">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label> Email</label>
-                                        <input class="form-control" type="email">
+                                        <label> Email Address</label>
+                                         <?php echo form_error('email'); ?>
+                                         <?php echo form_input(array('id' => 'email', 'name' => 'email','class'=>'form-control', 'placeholder'=>'Enter Email Address')); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label> Phone Number</label>
-                                        <input class="form-control" type="text">
+                                         <?php echo form_error('phone_number'); ?>
+                                         <?php echo form_input(array('id' => 'phone_number', 'name' => 'phone_number','class'=>'form-control', 'placeholder'=>'Enter Phone Number')); ?>
+                                    </div>
+                                </div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label> Address</label>
+                                         <?php echo form_error('phone_number'); ?>
+                                         <?php echo form_input(array('id' => 'address', 'name' => 'address','class'=>'form-control', 'placeholder'=>'Enter Address')); ?>
+                                    </div>
+                                </div>
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label> Date of Birth</label>
+                                         <?php echo form_error('phone_number'); ?>
+                                         <?php echo form_input(array('id' => 'dob', 'name' => 'dob','class'=>'form-control', 'placeholder'=>'Enter Date of Birth')); ?>
                                     </div>
                                 </div>
                             </div>
-							 <div class="custom-file mb-3">
-								  <input type="file" class="custom-file-input" name="filename">
-								  <label class="custom-file-label">Choose file (Photo)</label>
-							</div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="display-block">Booking Status</label>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_active" value="option1" checked>
-									<label class="form-check-label" for="product_active">
-									Active
-									</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="status" id="product_inactive" value="option2">
-									<label class="form-check-label" for="product_inactive">
-									Inactive
-									</label>
-								</div>
+                            
                             </div>
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Create Customer</button>
+                                <?php echo form_submit(array('id' => 'submit', 'value' => 'Create Customer', 'class'=>'btn btn-primary submit-btn')); ?>
                             </div>
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
@@ -550,6 +485,9 @@
 	<script src="<?php echo base_url(); ?>./assets/js/moment.min.js"></script>
 	<script src="<?php echo base_url(); ?>./assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="<?php echo base_url(); ?>./assets/js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script>
             $(function () {
                 $('#datetimepicker3').datetimepicker({

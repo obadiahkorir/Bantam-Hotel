@@ -43,7 +43,7 @@
                                     <a href="activities.html">
                                         <div class="media">
 											<span class="avatar">
-												<img alt="John Doe" src="assets/img/user.jpg" class="img-fluid rounded-circle">
+												<img alt="John Doe" src="<?php echo base_url(); ?>./assets/img/user.jpg" class="img-fluid rounded-circle">
 											</span>
 											<div class="media-body">
 												<p class="noti-details"><span class="noti-title">John Doe</span> booking a new room<span class="noti-title"></span></p>
@@ -204,112 +204,56 @@
                         <h4 class="page-title">Add Room</h4>
                     </div>
                 </div>
-                <div class="row">
+                 <div class="row">
                     <div class="col-lg-8 offset-lg-2">
-                        <form>
+                       <?php echo form_open('Rooms'); ?>
+                            <?php if (isset($message)) { ?>
+                            <CENTER><h3 style="color:green;">Room Details has been Registered Successfully</h3></CENTER><br>
+                            <?php } ?>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-										<label>Room Number</label>
-										<input class="form-control" type="text">
-									</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Room type</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                            <option>Quad</option>
-                                            <option>King</option>
-                                            <option>Suite</option>
-                                            <option>Villa</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>AC/Non AC</label>
-                                        <select class="select">
-                                            <option>Select</option>
-                                            <option>AC</option>
-                                            <option>Non Ac</option>
-                                        </select>
+                                        <label>Room Name</label>
+                                  <?php echo form_error('room_name'); ?>
+                                 <?php echo form_input(array('id' => 'room_name', 'name' => 'room_name','class'=>'form-control', 'placeholder'=>'Enter Room Name')); ?>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Food</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>Free Breakfast</option>
-											<option>Free Lunch</option>
-											<option>Free Dinner</option>
-											<option>Free Breakfast & Dinner</option>
-											<option>Free Welcome Drink</option>
-											<option>No Free Food</option>
-                                        </select>
+                                        <label>Room Type</label>
+                                        <?php echo form_error('room_type'); ?>
+                                        <?php echo form_input(array('id' => 'room_type', 'name' => 'room_type','class'=>'form-control', 'placeholder'=>'Enter Room Type')); ?>
                                     </div>
-                               </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Bed Count</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>1</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
-											<option>6</option>
-                                        </select>
+                                        <label>Room Size</label>
+                                         <?php echo form_error('room_capacity'); ?>
+                                         <?php echo form_input(array('id' => 'room_capacity', 'name' => 'room_capacity','class'=>'form-control', 'placeholder'=>'Enter Room Capcity ')); ?>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                   <div class="form-group">
-                                        <label>Charges for Cancellation</label>
-                                        <select class="select">
-											<option>Select</option>
-											<option>Free</option>
-											<option>5% Before 24 Hours</option>
-											<option>No Cancellation Allow </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-										<label>Rent</label>
-										<input class="form-control" type="text">
-									</div>
+                                        <label> Room Cost</label>
+                                         <?php echo form_error('rent'); ?>
+                                         <?php echo form_input(array('id' => 'rent', 'name' => 'rent','class'=>'form-control', 'placeholder'=>'Enter Room Cost')); ?>
+                                    </div>
                                 </div>
-                                <div class="col-md-6">
-                                     <div class="form-group">
-										<label>Mobile Number</label>
-										<input class="form-control" type="text">
-									</div>
+                                  <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label> Room Number</label>
+                                         <?php echo form_error('room_no'); ?>
+                                         <?php echo form_input(array('id' => 'room_no', 'name' => 'room_no','class'=>'form-control', 'placeholder'=>'Enter Room Number')); ?>
+                                    </div>
                                 </div>
                             </div>
-							 <div class="custom-file mb-3">
-								  <input type="file" class="custom-file-input" name="filename">
-								  <label class="custom-file-label">Choose file (Photo)</label>
-							</div>
-                            <div class="form-group">
-                                <label>Message</label>
-                                <textarea cols="30" rows="4" class="form-control"></textarea>
                             </div>
-                            
                             <div class="m-t-20 text-center">
-                                <button class="btn btn-primary submit-btn">Save</button>
-                                <button class="btn btn-danger submit-btn">Cancel</button>
+                                <?php echo form_submit(array('id' => 'submit', 'value' => 'Create Room', 'class'=>'btn btn-primary submit-btn')); ?>
                             </div>
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
